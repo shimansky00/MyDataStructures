@@ -121,7 +121,7 @@ linked_list<T>::linked_list()
 template <typename T>
 linked_list<T>::~linked_list()
 {
-    node<T> *current = head;
+    node<T> *current = this->head;
     node<T> *next = nullptr;
     while (current != nullptr) {
         next = current->next;
