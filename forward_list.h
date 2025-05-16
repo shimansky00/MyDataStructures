@@ -1,16 +1,25 @@
-#ifndef LINKED_LIST_H
+#ifndef FORWARD_LIST_H
 
-#define LINKED_LIST_H
+#define FORWARD_LIST_H
 
 #include <iostream>
 #include <stdexcept>
-#include "../node.h"
 
 template <typename T>
-class linked_list
+struct node
+{
+    T data;
+    node<T> *next;
+    node(T const &i): data(i), next(nullptr) {};
+};
+
+template <typename T>
+class forward_list
 {
     node<T> *head;
     int size;
+
+    template <typename T>
 
     node<T>* find_last() {
         if (this->head == nullptr) {
@@ -24,10 +33,10 @@ class linked_list
 
         return current;
     }
-
+        
 public:
-    linked_list();
-    ~linked_list();
+    forward_list();
+    ~forward_list();
 
     T& operator[](const int index) const {
         if (index < 0 || index >= this->size) {
@@ -112,14 +121,14 @@ public:
 };
 
 template <typename T>
-linked_list<T>::linked_list()
+forward_list<T>::forward_list()
 {
     this->head = nullptr;
     this->size = 0;
 }
 
 template <typename T>
-linked_list<T>::~linked_list()
+forward_list<T>::~forward_list()
 {
     node<T> *current = this->head;
     node<T> *next = nullptr;

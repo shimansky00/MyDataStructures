@@ -1,12 +1,12 @@
 #include <iostream>
-#include "linked_list/linked_list.h"
+#include "forward_list.h"
 
 using std::cout, std::endl;
 
-void print_list(const linked_list<int> &list);
+void print_list(const forward_list<int> &list);
 
 int main() {
-    linked_list<int> list;
+    forward_list<int> list;
     for (int i = 0; i < 20; i++) {
         list.push_back(i);
     }
@@ -27,7 +27,7 @@ int main() {
     return 0;
 }
 
-void print_list(const linked_list<int> &list) {
+void print_list(const forward_list<int> &list) {
     for (int i = 0; i < list.getSize(); i++) {
         cout << list[i] << " ";
     }
