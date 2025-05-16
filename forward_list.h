@@ -19,8 +19,6 @@ class forward_list
     node<T> *head;
     int size;
 
-    template <typename T>
-
     node<T>* find_last() {
         if (this->head == nullptr) {
             throw std::out_of_range("This list is empty");
